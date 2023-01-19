@@ -110,4 +110,4 @@ TEST DATA 2: Marks weights 95kg and is 1.88m tall.
 //   console.log(`Markov BMI2 (${markBMI2}) je manji od Johnovog (${johnBMI2}).`);
 // }
 
-//////
+///////
