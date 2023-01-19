@@ -24,6 +24,7 @@
 // }
 
 // if (favourite !== 23) console.log("Why not 23?");
+///////
 
 //// fundamentals - part 1
 //// operator precedence
@@ -43,6 +44,7 @@
 // const averageAge = (ageJonas + ageSarah) / 2;
 // console.log(ageJonas, ageSarah);
 // console.log(averageAge);
+///////
 
 ////// fundamentals - part 1
 ////// coding challenge #1
@@ -109,5 +111,57 @@ TEST DATA 2: Marks weights 95kg and is 1.88m tall.
 // } else {
 //   console.log(`Markov BMI2 (${markBMI2}) je manji od Johnovog (${johnBMI2}).`);
 // }
-
 ///////
+
+////// fundamentals - part 1
+////// truthy and falsy values
+
+// 5 falsy values: 0, '', udnefined, null, NAN
+// let height;
+// if (height) {
+//   console.log("Height is defined");
+// } else {
+//   console.log("Height is UNDEFINED");
+// }
+////// fundamentals - part 1
+////// coding challenge #3
+/* 
+There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins the a trophy!
+
+1. Calculate the average score for each team, using the test data below
+2. Compare the team's average scores to determine the winner of the competition, and print it to the console. Don't forget that there can be a draw, so test for that as well (draw means they have the same average score).
+3. BONUS 1: Include a requirement for a minimum score of 100. With this rule, a team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. HINT: Use a logical operator to test for minimum score, as well as multiple else-if blocks.
+4. BONUS 2: Minimum score also applies to a draw! So a draw only happesn when both teams have the same score and both have a score greater or equal 100 points. Otherwise, no team wins the trophy.
+
+TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110.
+
+TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123.
+
+TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106.
+*/
+
+// const avgDolphins = (97 + 112 + 101) / 3;
+// const avgKoalas = (109 + 95 + 106) / 3;
+// if (avgDolphins < 100 || avgKoalas < 100) {
+//   console.log("Dolphins and Koalas average score should be higher than 100.");
+// } else if (avgDolphins > 100 && avgDolphins > 100 && avgDolphins == avgKoalas) {
+//   console.log(`It's DRAW!`);
+// } else if (avgDolphins > 100 && avgKoalas > 100 && avgDolphins > avgKoalas) {
+//   console.log(`Dolphins(${avgDolphins}) has won against Koalas(${avgKoalas}).`);
+// } else if (avgDolphins > 100 && avgKoalas > 100 && avgDolphins < avgKoalas) {
+//   console.log(`Koalas(${avgKoalas}) has won against Dolphins(${avgDolphins}).`);
+// }
+///////
+
+/////// fundamentals - part 2
+/////// activating strict mode
+// "use strict";
+
+// let hasDriversLicense = false;
+// const passTest = true;
+
+// if (passTest) hasDriversLicense = true;
+// if (hasDriversLicense) console.log(`I can drive :D`);
+
+// const interface = "Audio";
+// const private = 534;
