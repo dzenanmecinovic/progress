@@ -191,3 +191,74 @@ TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106.
 // console.log(appleOrangeJuice);
 
 // const num = Number("23");
+
+/////// fundamentals - part 2
+/////// function Declarations vs. Expressions
+
+// function declaration
+// function calcAge1(birthYear) {
+//   return 2023 - birthYear;
+// }
+// const age1 = calcAge1(1991);
+
+// // function expression
+// const calcAge2 = function (birthYear) {
+//   return 2023 - birthYear;
+// };
+// const age2 = calcAge2(1991);
+
+// console.log(age1, age2);
+
+// /////// fundamentals - part 2
+// /////// Arrow Functions
+// const calcAge3 = (birthYear) => 2023 - birthYear;
+// const age3 = calcAge3(1991);
+// console.log(age3);
+
+// const yearsUntilRetirement = (birthYear, firsName) => {
+//   const age = 2023 - birthYear;
+//   const retirement = 65 - age;
+//   //   return retirement;
+//   return `${firsName} retires in ${age} years.`;
+// };
+
+// console.log(yearsUntilRetirement(2004, "Dzeno"));
+// console.log(yearsUntilRetirement(1985, "Jack"));
+
+/////// fundamentals - part 2
+/////// Functions calling other functions
+
+function cutFruitPieces(fruit) {
+  return fruit * 3;
+}
+
+function fruitProcessor(apples, oranges) {
+  const applePieces = cutFruitPieces(apples);
+  const orangePieces = cutFruitPieces(oranges);
+  const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of orange.`;
+  return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+
+/////// fundamentals - part 2
+/////// Reviewing Functions
+
+const calcAge = function (birthYear) {
+  return 2023 - birthYear;
+};
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
+  if (retirement > 0) {
+    return retirement;
+    console.log(`${firstName} retires in ${retirement} years`); // ignored ((return statements immediately exits the function))
+  } else {
+    return -1;
+    console.log(`${firstName} has already retired`); // ignored ((return statements immediately exits the function))
+  }
+};
+
+console.log(yearsUntilRetirement(2004, `Dzenan`));
+console.log(yearsUntilRetirement(1930, `Mike`));
