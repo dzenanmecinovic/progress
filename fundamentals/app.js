@@ -165,3 +165,29 @@ TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106.
 
 // const interface = "Audio";
 // const private = 534;
+
+/////// fundamentals - part 2
+/////// functions
+
+// function logger() {
+//   console.log("My name is Dzenan");
+// }
+
+// // calling / running / invoking function
+// logger();
+// logger();
+// logger();
+
+// function fruitProcessor(apples, oranges) {
+//   console.log(apples, oranges);
+//   const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+//   return juice;
+// }
+
+// const appleJuice = fruitProcessor(5, 0);
+// console.log(appleJuice);
+
+// const appleOrangeJuice = fruitProcessor(2, 4);
+// console.log(appleOrangeJuice);
+
+// const num = Number("23");
