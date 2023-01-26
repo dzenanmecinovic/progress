@@ -375,21 +375,21 @@ TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106.
 /////// fundamentals - part 2
 /////// DOT vs. BRACKET NOTATION
 
-const jackie = {
-  firstName: "Dzenan",
-  lastName: "Mecinovic",
-  age: 2023 - 2004,
-  job: "student",
-  friends: ["Prvi", "Drugi", "Treci"],
-};
-console.log(jackie);
+// const jackie = {
+//   firstName: "Dzenan",
+//   lastName: "Mecinovic",
+//   age: 2023 - 2004,
+//   job: "student",
+//   friends: ["Prvi", "Drugi", "Treci"],
+// };
+// console.log(jackie);
 
-console.log(jackie.lastName);
-console.log(jackie["lastName"]);
+// console.log(jackie.lastName);
+// console.log(jackie["lastName"]);
 
-const nameKey = "Name";
-console.log(jackie["first" + nameKey]);
-console.log(jackie["last" + nameKey]);
+// const nameKey = "Name";
+// console.log(jackie["first" + nameKey]);
+// console.log(jackie["last" + nameKey]);
 
 // console.log(jackie.'last' + nameKey); // doesn't work
 
@@ -405,12 +405,116 @@ console.log(jackie["last" + nameKey]);
 //   );
 // }
 
-jackie.location = "Serbia";
-jackie["twitter"] = "@dzenoooooo";
-console.log(jackie);
+// jackie.location = "Serbia";
+// jackie["twitter"] = "@dzenoooooo";
+// console.log(jackie);
 
 // Challenge
 // "Jackie has 3 friends, and his best friend is called Prvi."
-console.log(
-  `${jackie.firstName} has ${jackie.friends.length} friends, and his best friend is called ${jackie.friends[0]}.`
-);
+// console.log(
+//   `${jackie.firstName} has ${jackie.friends.length} friends, and his best friend is called ${jackie.friends[0]}.`
+// );
+
+/////// fundamentals - part 2
+/////// Objects Methods
+
+// const jackie = {
+//   firstName: "Dzenan",
+//   lastName: "Mecinovic",
+//   birthYear: 2004,
+//   job: "student",
+//   friends: ["Prvi", "Drugi", "Treci"],
+//   hasDriversLicense: true,
+
+//   // calcAge: function (birthYear) {
+//   //   return 2023 - birthYear;
+//   // },
+
+//   // calcAge: function () {
+//   //   // console.log(this); // whole object
+//   //   return 2023 - this.birthYear;
+//   // },
+
+//   calcAge: function () {
+//     this.age = 2023 - this.birthYear;
+//     return this.age;
+//   },
+
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${
+//       this.job
+//     }, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+//   },
+// };
+
+// console.log(jackie.calcAge());
+// console.log(jackie.age);
+// console.log(jackie.age);
+// console.log(jackie.age);
+// // console.log(jackie["calcAge"](2004));
+
+// // Challenge
+// // "Dzenan is a 46-year old teacher, and he has a/no driver's license."
+
+// // me
+// // jackie.hasDriversLicense = false;
+// // jackie["age"] = 46;
+
+// // console.log(jackie);
+
+// // root
+
+// console.log(jackie.getSummary());
+
+/////// fundamentals - part 2
+/////// coding challenge - objects
+
+/*
+Let's go back to Mark and John comparing their BMIs!
+This time, let's use objects to implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height). (mass in kg and height in meter)
+
+1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on both objects).
+Store the BMI value to a property, and also return it from the method.
+3. Log to the console who has the higher BMI, together with the full name and the respective BMI.
+Example: "John's BMI (28.3) is higher than Marks' (23.9)!"
+
+TEST DATA:
+Marks weights 78kg and is 1.69m tall.
+John weights 92kg and is 1.95m tall.
+*/
+
+// const Mark = {
+//   fullName: "Mark Miller",
+//   weight: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     this.BMI = this.weight / this.height ** 2;
+//     return this.BMI;
+//   },
+// };
+
+// const John = {
+//   fullName: "John Smith",
+//   weight: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     this.BMI = this.weight / this.height ** 2;
+//     return this.BMI;
+//   },
+// };
+
+// const BMIJohn = John.calcBMI();
+// const BMIMark = Mark.calcBMI();
+
+// // console.log(John.calcBMI());
+
+// if (BMIMark > BMIJohn) {
+//   console.log(
+//     `${Mark.fullName}'s BMI(${BMIMark}) is higher than ${John.fullName}'s BMI(${BMIJohn}).`
+//   );
+// } else {
+//   console.log(
+//     `${John.fullName}'s BMI(${BMIJohn}) is higher than ${Mark.fullName}'s BMI(${BMIMark}).`
+//   );
+// }
