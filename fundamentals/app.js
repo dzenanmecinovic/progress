@@ -518,3 +518,74 @@ John weights 92kg and is 1.95m tall.
 //     `${John.fullName}'s BMI(${BMIJohn}) is higher than ${Mark.fullName}'s BMI(${BMIMark}).`
 //   );
 // }
+
+/////// fundamentals - part 2
+/////// Loops
+
+// console.log(`Lifting weights repetition 1`);
+// console.log(`Lifting weights repetition 2`);
+// console.log(`Lifting weights repetition 3`);
+// console.log(`Lifting weights repetition 4`);
+// console.log(`Lifting weights repetition 5`);
+// console.log(`Lifting weights repetition 6`);
+// console.log(`Lifting weights repetition 7`);
+// console.log(`Lifting weights repetition 8`);
+// console.log(`Lifting weights repetition 9`);
+// console.log(`Lifting weights repetition 10`);
+
+// for loop keeps running while condition is TRUE
+// for (let rep = 1; rep <= 30; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
+
+/////// fundamentals - part 2
+/////// Looping Arrays, breaking and continuing
+
+// const jackieArray = [
+//   "Dzenan",
+//   "Mecinovic",
+//   2023 - 2004,
+//   "student",
+//   ["Michael", "Peter", " Steven"],
+//   true,
+// ];
+// const types = [];
+// console.log(jackieArray[0])
+// console.log(jackieArray[1])
+// ...
+// console.log(jackieArray[4])
+// jackieArray[5] does NOT exist
+
+// for (let i = 0; i < jackieArray.length; i++) {
+//   // Reading from jackieArray
+//   console.log(jackieArray[i] /*, typeof jackieArray[i]*/);
+
+//   // Filling types array
+//   // types[i] = typeof jackieArray[i];
+//   types.push(typeof jackieArray[i]);
+// }
+
+// console.log(types);
+
+// const years = [2004, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2023 - years[i]);
+// }
+// console.log(ages);
+
+// continue and break //
+// console.log("--- ONLY STRINGS ---");
+// for (let i = 0; i < jackieArray.length; i++) {
+//   if (typeof jackieArray[i] !== "string") continue;
+
+//   console.log(jackieArray[i], typeof jackieArray[i]);
+// }
+
+// console.log("--- BREAK WITH NUMBER ---");
+// for (let i = 0; i < jackieArray.length; i++) {
+//   if (typeof jackieArray[i] === "number") break;
+
+//   console.log(jackieArray[i], typeof jackieArray[i]);
+// }
