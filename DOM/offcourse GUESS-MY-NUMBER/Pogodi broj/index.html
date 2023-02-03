@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>POGODI BROJ</title>
+  </head>
+  <body>
+    <header>
+      <h1>Pogodi broj!</h1>
+      <p class="between">(Izmedju 1 i 15)</p>
+      <div class="centrirani">
+        <button class="btn again">Igraj opet</button>
+      </div>
+      <div class="number">?</div>
+    </header>
+    <main>
+      <section class="left">
+        <div class="input">
+          <input type="number" class="guess" />
+        </div>
+        <div class="centrirani">
+          <button class="btn check">PROVERI</button>
+        </div>
+      </section>
+      <div class="right">
+        <p class="message">Pocni da pogadjas...</p>
+        <p class="label-score">Poeni: <span class="score">15</span></p>
+        <p class="label-highscore">Rekord: <span class="highscore">0</span></p>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
