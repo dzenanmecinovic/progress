@@ -13,23 +13,34 @@ console.log(document.querySelector('.guess').value);
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 // let score = +document.querySelector('.score').value; //me
 let score = 20;
-document.querySelector('.number').textContent = secretNumber;
+document.querySelector('.number').textContent = secretNumber; // ( '?' )
 console.log(secretNumber);
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = +document.querySelector('.guess').value;
   console.log(guess);
 
+  // input terms
   if (!guess || guess > 20 || guess < 0) {
     document.querySelector('.message').textContent = 'Only numbers 1-20 !⛔';
+
+    // win
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = `Correct number !✅`;
+
+    document.querySelector('body').style.backgroundColor = '#60b347';
+
+    // document.querySelector('.number').style.color = ''; (( input styles ))
+
+    // too high
   } else if (guess > secretNumber) {
     document.querySelector('.message').textContent = `Too high !👆🏾`;
     score > 1
       ? score--
       : (document.querySelector('.message').textContent = `You lost! 😢`);
     document.querySelector('.score').textContent = score;
+
+    // too low
   } else if (guess < secretNumber) {
     document.querySelector('.message').textContent = `Too low !👇🏾`;
     score > 1
