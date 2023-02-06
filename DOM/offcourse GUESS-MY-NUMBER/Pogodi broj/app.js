@@ -18,7 +18,9 @@ let highscore = 0;
 console.log(secretNumber);
 let dugme = document.querySelector('.check');
 dugme.disabled = false;
-
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
 // dugme.disabled = false;
 document.querySelector('.check').addEventListener('click', function () {
   const guess = +document.querySelector('.guess').value;
@@ -26,12 +28,10 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // input terms
   if (!guess || guess > 15 || guess < 0) {
-    document.querySelector('.message').textContent =
-      'Samo brojevi od 1 do 15 !⛔';
-
+    displayMessage('Samo brojevi od 1 do 15 !⛔');
     // win
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = `Tacan broj !✅`;
+    displayMessage('Tacan broj !✅');
     document.querySelector('body').style.backgroundColor = '#60b347';
     dugme.disabled = true;
     document.querySelector('.number').textContent = secretNumber;
@@ -44,18 +44,14 @@ document.querySelector('.check').addEventListener('click', function () {
     }
     // too high
   } else if (guess > secretNumber) {
-    document.querySelector('.message').textContent = `Previse visoko !👆🏾`;
-    score > 1
-      ? score--
-      : (document.querySelector('.message').textContent = `Izgubili ste! 😢`);
+    displayMessage('Previse visoko !👆🏾');
+    score > 1 ? score-- : displayMessage('Izgubili ste! 😢');
     document.querySelector('.score').textContent = score;
 
     // too low
   } else if (guess < secretNumber) {
-    document.querySelector('.message').textContent = `Previse nisko !👇🏾`;
-    score > 1
-      ? score--
-      : (document.querySelector('.message').textContent = `Izgubili ste! 😢`);
+    displayMessage(`Previse nisko !👇🏾`);
+    score > 1 ? score-- : displayMessage('Izgubili ste! 😢');
     document.querySelector('.score').textContent = score;
     // score -= 1; //me
     // score.textContent = `${score}`; //me
@@ -78,7 +74,7 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 15;
   secretNumber = Math.trunc(Math.random() * 15) + 1;
   document.querySelector('body').style.backgroundColor = '#ffe4c4';
-  document.querySelector('.message').textContent = `Pocni da pogadjas...`;
+  displayMessage('Pocni da pogadjas...');
   document.querySelector('.number').textContent = `?`;
   document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = '';
