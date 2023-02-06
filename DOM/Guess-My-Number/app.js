@@ -13,8 +13,12 @@ console.log(document.querySelector('.guess').value);
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 // let score = +document.querySelector('.score').value; //me
 let score = 20;
+let highscore = 0;
 // document.querySelector('.number').textContent = secretNumber; // ( '?' )
 console.log(secretNumber);
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
 let dugme = document.querySelector('.check');
 dugme.disabled = false;
 
@@ -25,29 +29,31 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // input terms
   if (!guess || guess > 20 || guess < 0) {
-    document.querySelector('.message').textContent = 'Only numbers 1-20 !⛔';
+    displayMessage('Only numbers 1-20 !⛔');
 
     // win
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = `Correct number !✅`;
+    displayMessage('Correct number !✅');
     document.querySelector('body').style.backgroundColor = '#60b347';
     dugme.disabled = true;
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    } else {
+      highscore = highscore;
+    }
     // document.querySelector('.number').style.color = ''; (( input styles ))
-
+    // when guess is wrong
     // too high
   } else if (guess > secretNumber) {
-    document.querySelector('.message').textContent = `Too high !👆🏾`;
-    score > 1
-      ? score--
-      : (document.querySelector('.message').textContent = `You lost! 😢`);
+    displayMessage('Too high !👆🏾');
+    score > 1 ? score-- : displayMessage('You lost! 😢');
     document.querySelector('.score').textContent = score;
 
     // too low
   } else if (guess < secretNumber) {
-    document.querySelector('.message').textContent = `Too low !👇🏾`;
-    score > 1
-      ? score--
-      : (document.querySelector('.message').textContent = `You lost! 😢`);
+    displayMessage('Too low !👇🏾');
+    score > 1 ? score-- : displayMessage('You lost! 😢');
     document.querySelector('.score').textContent = score;
     // score -= 1; //me
     // score.textContent = `${score}`; //me
@@ -68,8 +74,12 @@ Here is how:
 
 document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#fff';
-  document.querySelector('.message').textContent = `Start guessing...`;
+  displayMessage('Start guessing...');
   document.querySelector('.score').textContent = +`20`;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   document.querySelector('.guess').value = '';
+  dugme.disabled = false;
+  score = 20;
 });
+
+// implementing highscores

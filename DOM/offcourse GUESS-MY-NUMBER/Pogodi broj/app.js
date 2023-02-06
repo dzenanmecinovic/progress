@@ -13,6 +13,7 @@ console.log(document.querySelector('.guess').value);
 let secretNumber = Math.trunc(Math.random() * 15) + 1;
 // let score = +document.querySelector('.score').value; //me
 let score = 15;
+let highscore = 0;
 // document.querySelector('.number').textContent = secretNumber; // ( '?' )
 console.log(secretNumber);
 let dugme = document.querySelector('.check');
@@ -35,7 +36,12 @@ document.querySelector('.check').addEventListener('click', function () {
     dugme.disabled = true;
     document.querySelector('.number').textContent = secretNumber;
     // document.querySelector('.number').style.color = ''; (( input styles ))
-
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    } else {
+      highscore = highscore;
+    }
     // too high
   } else if (guess > secretNumber) {
     document.querySelector('.message').textContent = `Previse visoko !👆🏾`;
@@ -69,10 +75,12 @@ Here is how:
 */
 
 document.querySelector('.again').addEventListener('click', function () {
+  score = 15;
+  secretNumber = Math.trunc(Math.random() * 15) + 1;
   document.querySelector('body').style.backgroundColor = '#ffe4c4';
   document.querySelector('.message').textContent = `Pocni da pogadjas...`;
-  document.querySelector('.score').textContent = +`15`;
-  secretNumber = Math.trunc(Math.random() * 15) + 1;
+  document.querySelector('.number').textContent = `?`;
+  document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = '';
   dugme.disabled = false;
 });
