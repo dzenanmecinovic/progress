@@ -45,16 +45,28 @@ document.querySelector('.check').addEventListener('click', function () {
     // too high
   } else if (guess > secretNumber) {
     displayMessage('Previse visoko !👆🏾');
-    score > 1 ? score-- : displayMessage('Izgubili ste! 😢');
-    document.querySelector('.score').textContent = score;
+    if (score > 1) {
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      displayMessage('Izgubili ste! 😢');
+      dugme.disabled = true;
+    }
+    // score > 1 ? score-- : displayMessage('Izgubili ste! 😢');
+    // document.querySelector('.score').textContent = score;
 
     // too low
   } else if (guess < secretNumber) {
     displayMessage(`Previse nisko !👇🏾`);
-    score > 1 ? score-- : displayMessage('Izgubili ste! 😢');
-    document.querySelector('.score').textContent = score;
-    // score -= 1; //me
-    // score.textContent = `${score}`; //me
+    // score > 1 ? score-- : displayMessage('Izgubili ste! 😢');
+    // document.querySelector('.score').textContent = score;
+    if (score > 1) {
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      displayMessage('Izgubili ste! 😢');
+      dugme.disabled = true;
+    }
   }
 });
 
@@ -72,11 +84,11 @@ Here is how:
 
 document.querySelector('.again').addEventListener('click', function () {
   score = 15;
+  document.querySelector('.score').textContent = score;
   secretNumber = Math.trunc(Math.random() * 15) + 1;
   document.querySelector('body').style.backgroundColor = '#ffe4c4';
   displayMessage('Pocni da pogadjas...');
   document.querySelector('.number').textContent = `?`;
-  document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = '';
   dugme.disabled = false;
 });
