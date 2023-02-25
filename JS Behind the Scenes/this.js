@@ -14,6 +14,15 @@
 
 // dzeno.calcAge();
 
+// 2. Simple Function call ====>>     this = undefined (in strict mode, Otherwise: window(in browser))
+// 3. Arrow function ====>>     this = <this of surrounding func(lexical this)>
+// its using its parents keyword. arrow function don't get their own 'this'.
+
+// 4. Event listener ====>>     this = <DOM element that the handler is attached to>
+
+// *********** 'this' DOES NOT POINT TO THE FUNCTION ITSELF, AND ALSO NOT THE ITS VARIABLE ENVIRONMENT! *********** \\
+//                  IT POINTS TO THE "owner" OF THE FUNCTION IN WHICH THE "this" KEYWORD IS USED.
+
 // var x = 1;
 // a();
 // console.log(x);
