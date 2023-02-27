@@ -36,35 +36,81 @@
 
 // 'this' keyword in practice
 
-console.log(this); // this keyword in the global scope is simply the 'window' object. (( thats the global object))
+// console.log(this); // this keyword in the global scope is simply the 'window' object. (( thats the global object))
 
-const calcAge2 = function (birthYear) {
-  console.log(2037 - birthYear);
-  console.log(this);
-};
-calcAge2(1991);
+// const calcAge2 = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+// calcAge2(1991);
 
-const calcAgeArrow = (birthYear) => {
-  console.log(2037 - birthYear);
-  console.log(this); // uses lexical 'this' keyword, which means its using his parents keyword
-};
-calcAgeArrow(1980);
+// const calcAgeArrow = (birthYear) => {
+//   console.log(2037 - birthYear);
+//   console.log(this); // uses lexical 'this' keyword, which means its using his parents keyword
+// };
+// calcAgeArrow(1980);
 
+// const dzeno = {
+//   year: 2004,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2023 - this.year);
+//   },
+// };
+
+// dzeno.calcAge();
+
+// const matilda = {
+//   year: 2017,
+// };
+// matilda.calcAge = dzeno.calcAge; // Method Borrowing
+// matilda.calcAge();
+
+// const f = dzeno.calcAge;
+// f();
+var firstName = "Matilda";
 const dzeno = {
+  firstName: "Dzenan",
   year: 2004,
   calcAge: function () {
-    console.log(this);
+    // console.log(this);
     console.log(2023 - this.year);
+    // Solution 1
+    // const self = this; // self or that
+    // const isMillenial = function () {
+    //   console.log(self);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    //   // console.log(this.year >= 1981 && this.year <= 1996);
+    // };
+
+    // Solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+  greet: function () {
+    console.log(this);
+    console.log(`Hey ${this.firstName}`);
   },
 };
-
+dzeno.greet();
 dzeno.calcAge();
 
-const matilda = {
-  year: 2017,
-};
-matilda.calcAge = dzeno.calcAge; // Method Borrowing
-matilda.calcAge();
+// arrow function uses the 'this' keyword from its parent scope.
+// regular function get his own 'this' keyword, and it was undefined.
 
-const f = dzeno.calcAge;
-f();
+// arguments keyword
+var addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 9, 12);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 5, 8);
