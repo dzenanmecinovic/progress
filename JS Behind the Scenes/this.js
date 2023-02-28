@@ -67,50 +67,50 @@
 // matilda.calcAge();
 
 // const f = dzeno.calcAge;
-// f();
-var firstName = "Matilda";
-const dzeno = {
-  firstName: "Dzenan",
-  year: 2004,
-  calcAge: function () {
-    // console.log(this);
-    console.log(2023 - this.year);
-    // Solution 1
-    // const self = this; // self or that
-    // const isMillenial = function () {
-    //   console.log(self);
-    //   console.log(self.year >= 1981 && self.year <= 1996);
-    //   // console.log(this.year >= 1981 && this.year <= 1996);
-    // };
+// // f();
+// var firstName = "Matilda";
+// const dzeno = {
+//   firstName: "Dzenan",
+//   year: 2004,
+//   calcAge: function () {
+//     // console.log(this);
+//     console.log(2023 - this.year);
+//     // Solution 1
+//     // const self = this; // self or that
+//     // const isMillenial = function () {
+//     //   console.log(self);
+//     //   console.log(self.year >= 1981 && self.year <= 1996);
+//     //   // console.log(this.year >= 1981 && this.year <= 1996);
+//     // };
 
-    // Solution 2
-    const isMillenial = () => {
-      console.log(this);
-      console.log(this.year >= 1981 && this.year <= 1996);
-    };
-    isMillenial();
-  },
-  greet: function () {
-    console.log(this);
-    console.log(`Hey ${this.firstName}`);
-  },
-};
-dzeno.greet();
-dzeno.calcAge();
+//     // Solution 2
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+//     isMillenial();
+//   },
+//   greet: function () {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`);
+//   },
+// };
+// dzeno.greet();
+// dzeno.calcAge();
 
-// arrow function uses the 'this' keyword from its parent scope.
-// regular function get his own 'this' keyword, and it was undefined.
+// // arrow function uses the 'this' keyword from its parent scope.
+// // regular function get his own 'this' keyword, and it was undefined.
 
-// arguments keyword
-var addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-addExpr(2, 5);
-addExpr(2, 5, 9, 12);
+// // arguments keyword
+// var addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 5);
+// addExpr(2, 5, 9, 12);
 
-var addArrow = (a, b) => {
-  console.log(arguments);
-  return a + b;
-};
-addArrow(2, 5, 8);
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addArrow(2, 5, 8);
