@@ -41,55 +41,96 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}.`
     );
   },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+/////////////////////////////////////
+// 1) Destructuring
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
+// SPREAD, because on RIGHT side of =  (assignment operator)
+const arr = [1, 2, ...[3, 4]];
 
-console.log(...newArr); // individual elements of the array
-console.log(1, 2, 7, 8, 9);
-
-const newMenu = [...restaurant.mainMenu, "Gnocci"];
-console.log(newMenu);
-
-// Copy array
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy);
-
-// Join 2 arrays
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
-
-// Iterables: arrays, strings, maps, sets. NOT objects
-const str = "Dzenan";
-const letters = [...str, " ", "M."];
-console.log(letters);
-console.log(...str);
-console.log("D", "z", "e");
-// console.log(`${...str}`) // Unexpected token '...'
-
-// Real-world example
-const ingredients = [
-  // prompt(`Let's make pasta! Ingredient 1?`),
-  // prompt(`Ingredient 2?`),
-  // prompt(`Ingredient 3?`),
+// REST, because on LEFT side of = (assignment operator)
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
-console.log(ingredients);
-
-restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
-restaurant.orderPasta(...ingredients);
+console.log(pizza, risotto, otherFood);
 
 // Objects
-const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Guiseppe" };
-console.log(newRestaurant);
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(weekDays);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = "Ristorante Roma";
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
+restaurant.orderPizza("mushrooms");
+/////////////////////////////////////
+// spread operator
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
+
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+// console.log(...newArr); // individual elements of the array
+// console.log(1, 2, 7, 8, 9);
+
+// const newMenu = [...restaurant.mainMenu, "Gnocci"];
+// console.log(newMenu);
+
+// // Copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
+
+// // Join 2 arrays
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// // Iterables: arrays, strings, maps, sets. NOT objects
+// const str = "Dzenan";
+// const letters = [...str, " ", "M."];
+// console.log(letters);
+// console.log(...str);
+// console.log("D", "z", "e");
+// // console.log(`${...str}`) // Unexpected token '...'
+
+// // Real-world example
+/* for the spread operator the second use case is to pass multiple arguments into the functions all at the same time. */
+// const ingredients = [
+//   // prompt(`Let's make pasta! Ingredient 1?`),
+//   // prompt(`Ingredient 2?`),
+//   // prompt(`Ingredient 3?`),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// restaurant.orderPasta(...ingredients);
+
+// // Objects
+// const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Guiseppe" };
+// console.log(newRestaurant);
+
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = "Ristorante Roma";
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
 /////////////////////////////////////////////
 // destructuring objects
