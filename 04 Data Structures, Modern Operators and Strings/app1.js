@@ -46,40 +46,117 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/////////////////////////////////
+// Local Assignment Operators
+// const rest1 = {
+//   name: "Capri",
+//   // numGuests: 20,
+//   numGuests: 0,
+// };
+
+// const rest2 = {
+//   name: "La Piazza",
+//   owner: "Giovanni Rossi",
+// };
+
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// rest1.numGuests ??= 10; // jer je gore 0 a && operator gleda samo ako je undefined ili null
+// rest2.numGuests ||= 10;
+
+// nullish assignment operator (null or undefined)
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+// AND assignment operator
+// rest1.owner = rest1.owner && "<ANONYMOUS>"; // ako je prva true onda vraca poslednju vrednost
+// rest2.owner = rest2.owner && "<ANONYMOUS>"; // ako je prva true onda vraca poslednju vrednost
+// rest1.owner &&= "<ANONYMOUS>";
+// rest2.owner &&= "<ANONYMOUS>";
+
+// console.log(rest1);
+// console.log(rest2);
+/////////////////////////////////
+// nullish coalescing operator //
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
+
+// // Nullish: null and undefined (NOT 0 or '')
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect);
+
+////////////////////////////////
+// OR and AND
+// console.log("---- OR ----");
+// Use ANY data type, return ANY data type, short-circuiting
+// console.log(3 || "Jonas");
+// console.log("" || "Jonas");
+// console.log(true || 0);
+// console.log(undefined || null);
+
+// console.log(undefined || 0 || "" || "Hello" || 23 || null);
+// in OR operation, the result is true if at least one operand is true.
+// restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
+// console.log("---- AND ----");
+// console.log(0 && "Jonas");
+// console.log(7 && "Jonas"); // if the first one is true then it returns last value. if first is false, it returns first.
+
+// console.log("Hello" && 23 && null && "Jonas");
+
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza("mushrooms", "spinach");
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
+
+// OR ( || ) operator will return first truthy value or simply the last value if all of them are falsy.
+// AND ( && ) operator will return the first falsy value or the last value if all of them are trutrhy.
+
 /////////////////////////////////////
+// Rest Pattern and Parameters
 // 1) Destructuring
 
 // SPREAD, because on RIGHT side of =  (assignment operator)
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
+// console.log(arr);
 
 // REST, because on LEFT side of = (assignment operator)
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
 // Objects
-const { sat, ...weekDays } = restaurant.openingHours;
-console.log(weekDays);
+// const { sat, ...weekDays } = restaurant.openingHours;
+// console.log(weekDays);
 
 // 2) Functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-  console.log(sum);
-};
-add(2, 3);
-add(5, 3, 7, 2);
-add(8, 2, 5, 3, 2, 1, 4);
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(8, 2, 5, 3, 2, 1, 4);
 
-const x = [23, 5, 7];
-add(...x);
+// const x = [23, 5, 7];
+// add(...x);
 
-restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
-restaurant.orderPizza("mushrooms");
+// restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
+// restaurant.orderPizza("mushrooms");
 /////////////////////////////////////
 // spread operator
 // const arr = [7, 8, 9];
