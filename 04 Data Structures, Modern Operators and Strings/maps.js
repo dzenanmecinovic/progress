@@ -46,40 +46,62 @@ const restaurant = {
   },
 };
 /////////////////////////////////////////////////
+// Summary: Which data structure to use??
+// arrays vs sets
+tasks = ["Code", "Eat", "Code"];
+// ["Code", "Eat", "Code"]
+
+tasks = new Set(["Code", "Eat", "Code"]);
+// {"Code", "Eat"}
+
+// objects vs maps
+task = {
+  task: "Code",
+  date: "today",
+  repeat: true,
+};
+
+task = new Map([
+  ["task", "Code"],
+  ["date", "today"],
+  [false, "Start coding!"],
+]);
+
+/////////////////////////////////////////////////
 // Maps Iteration
 
-const question = new Map([
-  ["question", "What is the best programming language in the world?"],
-  [1, "C"],
-  [2, "Java"],
-  [3, "JavaScript"],
-  ["correct", 3],
-  [true, "Correct 🎉"],
-  [false, "Try again 😢"],
-]);
-console.log(question);
+// const question = new Map([
+//   ["question", "What is the best programming language in the world?"],
+//   [1, "C"],
+//   [2, "Java"],
+//   [3, "JavaScript"],
+//   ["correct", 3],
+//   [true, "Correct 🎉"],
+//   [false, "Try again 😢"],
+// ]);
+// console.log(question);
 
 // Convert object to map
-console.log(Object.entries(openingHours));
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
 
 // Quiz app
-console.log(question.get("question"));
-for (const [key, value] of question) {
-  if (typeof key === "number") console.log(`Answer ${key}: ${value}.`);
-}
+// console.log(question.get("question"));
+// for (const [key, value] of question) {
+//   if (typeof key === "number") console.log(`Answer ${key}: ${value}.`);
+// }
 // const answer = +prompt("Your answer");
-const answer = 3;
-console.log(answer);
+// const answer = 3;
+// console.log(answer);
 // if (answer === 3) console.log(question.get(true));
-console.log(question.get(question.get("correct") === answer)); // clg(quest.get(true));
+// console.log(question.get(question.get("correct") === answer)); // clg(quest.get(true));
 
 // Convert map to array
-console.log([...question]);
+// console.log([...question]);
 // console.log(question.entries());
-console.log(...question.keys());
-console.log(...question.values());
+// console.log(...question.keys());
+// console.log(...question.values());
 /////////////////////////////////////////////////
 // Maps
 
