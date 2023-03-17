@@ -124,3 +124,5 @@ const printGoals = function (...players) {
 
 team1 < team2 && console.log("Team 1 is more likely to win"); // ako je prva true ispisi ovo ((&& OPERATOR))
 team1 > team2 && console.log("Team 2 is more likely to win"); // ako je prva true ispisi ovo ((&& OPERATOR))
+
+// operator ||     ==> ako je prva FALSE izvrsi kod
