@@ -1,59 +1,111 @@
-"use strict";
-const airline = "TAP Air Portugal";
+// "use strict";
+// const airline = "TAP Air Portugal";
 
-console.log(airline.toLowerCase());
-console.log(airline.toUpperCase());
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
 
+// // Split and join
+// console.log("a+very+nice+string".split("+"));
+// console.log("Dzenan Mecinovic".split(" "));
+
+// const [firstName, lastName] = "Dzenan Mecinovic".split(" ");
+// console.log(firstName);
+// console.log(lastName);
+
+// const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+// console.log(newName);
+
+// const capitalizeName = function (name) {
+//   const names = name.split(" ");
+//   const namesUpper = [];
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(" "));
+// };
+
+// capitalizeName("jessica ann smith davis");
+// capitalizeName("dzenan mecinovic");
+
+// // Padding
+// const message = "Go to gate 23! 🚪";
+// console.log(message.padStart(20, "+").padEnd(30, "+"));
+// console.log("Dzenan".padStart(20, "+").padEnd(30, "+"));
+
+// const maskCreditCard = function (number) {
+//   const str = number + ""; // Convert number to string.
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, "*");
+// };
+
+// console.log(maskCreditCard(64647384));
+// console.log(maskCreditCard(43378463864647384));
+// console.log(maskCreditCard("334859493847755774747"));
+
+// // Repeat
+// const message2 = "Bad weather... All Departures  Delayed... ";
+// console.log(message2.repeat(5));
+
+// const planesInLine = function (n) {
+//   console.log(`There is ${n} planes in line ${"✈".repeat(n)}`);
+// };
+
+// planesInLine(5);
+// planesInLine(3);
+// planesInLine(12);
+
+// part 2
 // Fix capitalization in name
-const passenger = "dZeNaN"; // Dzenan
-const passengerLower = passenger.toLowerCase();
-const passengerCorrect =
-  passengerLower[0].toUpperCase() + passengerLower.slice(1);
-console.log(passengerCorrect);
+// const passenger = "dZeNaN"; // Dzenan
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
 
-function fixCapitalization(passengerName) {
-  const passLower = passengerName.toLowerCase();
-  const passCorrect = passLower[0].toUpperCase() + passLower.slice(1);
-  return passCorrect;
-}
+// function fixCapitalization(passengerName) {
+//   const passLower = passengerName.toLowerCase();
+//   const passCorrect = passLower[0].toUpperCase() + passLower.slice(1);
+//   return passCorrect;
+// }
 
-// Comparing email
-const email = "hello@dzeno.io";
-const loginEmail = "     Hello@Dzeno.Io \n";
-const emailCorrect = loginEmail.toLowerCase().trim();
-console.log(emailCorrect);
-console.log(email === emailCorrect);
+// // Comparing email
+// const email = "hello@dzeno.io";
+// const loginEmail = "     Hello@Dzeno.Io \n";
+// const emailCorrect = loginEmail.toLowerCase().trim();
+// console.log(emailCorrect);
+// console.log(email === emailCorrect);
 
-// Replacing
-const priceGB = "288,97€";
-const priceUS = priceGB.replace(",", ".").replace("€", "$");
-console.log(priceGB, priceUS);
+// // Replacing
+// const priceGB = "288,97€";
+// const priceUS = priceGB.replace(",", ".").replace("€", "$");
+// console.log(priceGB, priceUS);
 
-const announcement = `All passengers come to barding door 23. Boarding door 23!`;
-console.log(announcement.replace("door", "gate"));
-console.log(announcement.replaceAll("door", "gate"));
+// const announcement = `All passengers come to barding door 23. Boarding door 23!`;
+// console.log(announcement.replace("door", "gate"));
+// console.log(announcement.replaceAll("door", "gate"));
 
-console.log(announcement.replace(/door/g, "gate"));
+// console.log(announcement.replace(/door/g, "gate"));
 
-// Booleans
-const plane = "Airbus A320neo";
-console.log(plane.includes("A320"));
-console.log(plane.includes("Boeing"));
-console.log(plane.startsWith("Aibr"));
+// // Booleans
+// const plane = "Airbus A320neo";
+// console.log(plane.includes("A320"));
+// console.log(plane.includes("Boeing"));
+// console.log(plane.startsWith("Aibr"));
 
-if (plane.startsWith("Airbus") && plane.endsWith("neo"))
-  console.log("Part of the NEW Airbus family ✈");
+// if (plane.startsWith("Airbus") && plane.endsWith("neo"))
+//   console.log("Part of the NEW Airbus family ✈");
 
-// Pratice exercises
-const checkBaggage = function (items) {
-  const baggage = items.toLowerCase();
-  if (baggage.includes("knife") || baggage.includes("gun"))
-    console.log("You are NOT allowed on board! 🚫");
-  else console.log("Welcome aboard! ✅");
-};
-checkBaggage("I have a laptop, some Food and a pocket Knife");
-checkBaggage("Socks and camera");
-checkBaggage("Got some snacks and a gun for protection");
+// // Pratice exercises
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes("knife") || baggage.includes("gun"))
+//     console.log("You are NOT allowed on board! 🚫");
+//   else console.log("Welcome aboard! ✅");
+// };
+// checkBaggage("I have a laptop, some Food and a pocket Knife");
+// checkBaggage("Socks and camera");
+// checkBaggage("Got some snacks and a gun for protection");
 
 // console.log(fixCapitalization("dZENAN"));
 // console.log(fixCapitalization("necijeIme"));
