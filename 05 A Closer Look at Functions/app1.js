@@ -1,72 +1,68 @@
-/*
-A function in JavaScript is a set of statements that performs a task or calculates a value,
-but for a procedure to qualify as a function, it should take some input and return an output
-where is some obvious relationship between the input and the output.
-*/
+// // A function in JavaScript is a set of statements that performs a task or calculates a value,
+// // but for a procedure to qualify as a function, it should take some input and return an output
+// // where is some obvious relationship between the input and the output.
 
-"use strict";
+// // Default Parameters
+// const bookings = [];
 
-// Default Parameters
-/* const bookings = [];
+// const createBooking = function (
+//   flightNum,
+//   numPassengers = 1,
+//   price = 199 * numPassengers // prihvata bilo kakav izraz koji se unese.
+// ) {
+//   // ES5
+//   //   numPassengers = numPassengers || 1;
+//   //   price = price || 199;
 
-const createBooking = function (
-  flightNum,
-  numPassengers = 1,
-  price = 199 * numPassengers // prihvata bilo kakav izraz koji se unese.
-) {
-  // ES5
-  //   numPassengers = numPassengers || 1;
-  //   price = price || 199;
+//   const booking = {
+//     flightNum,
+//     numPassengers,
+//     price,
+//   };
+//   console.log(booking);
+//   bookings.push(booking);
+// };
 
-  const booking = {
-    flightNum,
-    numPassengers,
-    price,
-  };
-  console.log(booking);
-  bookings.push(booking);
-};
+// createBooking("LH123");
+// createBooking("LH123", 2, 800);
+// createBooking("LH123", 5);
 
-createBooking("LH123");
-createBooking("LH123", 2, 800);
-createBooking("LH123", 5);
+// createBooking("LH123", undefined, 1000);
 
-createBooking("LH123", undefined, 1000); */
+// // How passing arguments works: Value vs. Reference
 
-// How passing arguments works: Value vs. Reference
+// const flight = "LH234";
+// const dzeno = {
+//   name: "Dzenan Mecinovic",
+//   passport: 24739479284,
+// };
 
-/* const flight = "LH234";
-const dzeno = {
-  name: "Dzenan Mecinovic",
-  passport: 24739479284,
-};
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = "LH999";
+//   passenger.name = "Mr. " + passenger.name; // referenca na uneti objekat
 
-const checkIn = function (flightNum, passenger) {
-  flightNum = "LH999";
-  passenger.name = "Mr. " + passenger.name; // referenca na uneti objekat
+//   if (passenger.passport === 24739479284) alert("Checked in");
+//   else alert("Wrong passport");
+// };
 
-  if (passenger.passport === 24739479284) alert("Checked in");
-  else alert("Wrong passport");
-};
+// checkIn(flight, dzeno);
+// console.log(flight);
+// console.log(dzeno);
 
-checkIn(flight, dzeno);
-console.log(flight);
-console.log(dzeno);
-
-// Is the same as doing...
+// // Is the same as doing...
 // flightNum = flight; // flightNum copies flight value to itself.
 // const passenger = dzeno;
 
-const newPassport = function (person) {
-  person.passport = Math.trunc(Math.random() * 100000000000);
-};
+// const newPassport = function (person) {
+//   person.passport = Math.trunc(Math.random() * 100000000000);
+// };
 
-newPassport(dzeno);
-checkIn(flight, dzeno); */
+// newPassport(dzeno);
+// checkIn(flight, dzeno);
 
-// 2 terms: passing by value, passing by reference
+// // 2 terms: passing by value, passing by reference
 
-// First-Class and Higher-Order Functions
+// // First-Class and Higher-Order Functions
 
 // const greet = () => console.log("Hey User!");
 // btn.addEventListener("click", greet); // <---- Example of higher-order function, where function receives another function as an argument.
@@ -78,7 +74,7 @@ checkIn(flight, dzeno); */
 //   };
 // } // <---- Second example of higher-order function, where function returns a new function.
 
-// -- Functions accepting callback functions
+// // -- Functions accepting callback functions
 
 // const oneWord = function (str) {
 //   return str.replace(/ /g, "").toLowerCase();
@@ -89,7 +85,7 @@ checkIn(flight, dzeno); */
 //   return [first.toUpperCase(), ...others].join(" ");
 // };
 
-// Higher-order function
+// // Higher-order function
 // const transformer = function (str, fn) {
 //   console.log(`Original string: ${str}`);
 //   console.log(`Transformed string: ${fn(str)}`);
@@ -101,7 +97,7 @@ checkIn(flight, dzeno); */
 // console.log("".padStart(42, "-"));
 // transformer("JavaScript is the best!", oneWord);
 
-// JS uses callback all the time
+// // JS uses callback all the time
 // const high5 = function () {
 //   console.log("👋🏾");
 // };
@@ -109,7 +105,7 @@ checkIn(flight, dzeno); */
 // document.body.addEventListener("click", high5);
 // ["Jonas", "Martha", "Adam"].forEach(high5);
 
-// -- Functions returning functions
+// // -- Functions returning functions
 
 // const greet = function (greeting) {
 //   return function (name) {
@@ -141,7 +137,7 @@ checkIn(flight, dzeno); */
 // pozdrav(`User${Math.trunc(Math.random() * 100000)}`);
 // pozdrav(`User${Math.trunc(Math.random() * 100000)}`);
 
-// -- The call and apply Methods
+// // -- The call and apply Methods
 
 // const lufthansa = {
 //   airline: "Lufthansa",
@@ -168,10 +164,10 @@ checkIn(flight, dzeno); */
 
 // const book = lufthansa.book;
 
-// Does NOT work
-// book(23, "Sarah Williams"); in regular function call, 'this' keyword points to undefined
+// // Does NOT work
+// // book(23, "Sarah Williams"); // in regular function call, 'this' keyword points to undefined
 
-// Call method
+// // Call method
 // book.call(eurowings, 23, "Sarah Williams");
 // console.log(eurowings);
 
@@ -187,9 +183,68 @@ checkIn(flight, dzeno); */
 // book.call(swiss, 23, "Matthew Scofield");
 // console.log(swiss.bookings);
 
-// Apply method
+// // Apply method
 // const flightData = [583, "George Cooper"];
 // book.apply(swiss, flightData);
 // console.log(swiss.bookings);
 
 // book.call(swiss, ...flightData); // call method with spreaded arguments from flightData array.
+
+// // Bind method
+// // book.call(eurowings, 23, 'Sarah Williams');
+
+// const bookEW = book.bind(eurowings);
+// const bookLH = book.bind(lufthansa);
+// const bookLX = book.bind(swiss);
+
+// bookEW(23, "Steven Williams");
+
+// const bookEW23 = book.bind(eurowings, 23);
+// bookEW23("Dzenan Mecinovic");
+// bookEW23("Martha Cooper");
+
+// // With Event Listeners
+// lufthansa.planes = 300;
+// lufthansa.buyPlane = function () {
+//   console.log(this);
+
+//   this.planes++;
+//   console.log(this.planes + `   ✈`);
+// };
+// // lufthansa.buyPlane();
+
+// document
+//   .getElementsByTagName("button")[0]
+//   .addEventListener("click", lufthansa.buyPlane.bind(lufthansa));
+
+// // Partial application
+
+// const addTax = (rate, value) => value + value * rate;
+// console.log(addTax(0.1, 200));
+
+// const addVAT = addTax.bind(null, 0.23);
+// const addVat = (value) => value + value * 0.23;
+
+// console.log(addVAT(100));
+// console.log(addVAT(23));
+
+// // const dodajVAT = (value) => {
+// //   return (rate) => {
+// //     return value + rate * value;
+// //   };
+// // };
+// // const dodaj = dodajVAT(200);
+// // console.log(dodaj(0.1));
+
+// // const dodajVat = (rate) => (value) => console.log(value + rate * value);
+// // dodajVat(0.1)(200);
+
+// const addTaxRate = function (rate) {
+//   return function (value) {
+//     return value + value * rate;
+//   };
+// };
+
+// const addVAT2 = addTaxRate(0.23);
+// console.log(addVAT2(100));
+// console.log(addVAT2(23));
