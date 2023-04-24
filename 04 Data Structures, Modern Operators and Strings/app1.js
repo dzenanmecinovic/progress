@@ -75,17 +75,17 @@ const restaurant = {
 /////////////////////////////////
 // Optional Chaining (?.)
 
-// WITHOUT optional chaining
+// // WITHOUT optional chaining
 // if (restaurant.openingHours && restaurant.openingHours.mon)
 //   console.log(restaurant.openingHours.mon.open);
 
 // console.log(restaurant.openingHours.mon?.open);
 
-// WITH optional chaining
+// // WITH optional chaining
 // console.log(restaurant.openingHours.mon?.open);
 // console.log(restaurant.openingHours?.mon?.open);
 
-// Example
+// // Example
 // const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 // for (const day of days) {
 //   console.log(day);
